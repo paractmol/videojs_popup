@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Video.js | HTML5 Video Player</title>
+
+  <!-- Chang URLs to wherever Video.js files will be hosted -->
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <link href="magnific-popup.css" rel="stylesheet" type="text/css">
+  <!-- video.js must be in the <head> for older IEs to work. -->
+  <script src="video.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="magnific-popup.js"></script>
+  <!-- Unless using the CDN hosted version, update the URL to the Flash SWF -->
+  <script>
+    videojs.options.flash.swf = "video-js.swf";
+    $('document').ready(function(){
+      $('.open-popup-link').magnificPopup({
+        type:'inline',
+        midClick: true
+      });
+      $('.open-popup-link').on('click',function(){
+        videojs('example_video_1').play();
+      })
+    })
+  </script>
+  <style>
+    .video-js .vjs-tech {
+      position: relative;
+      height: inherit;
+    }
+    .player {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      background:black;
+    }
+  </style>
+
+</head>
+<body>
+  <a href="#test-popup" class="open-popup-link">Open player</a>
+  <div id="test-popup" class="player mfp-hide">
+    <video id="example_video_1" class="video-js vjs-default-skin" controls preload="metadata" width="auto" height="auto"
+      style="width:100%"
+      data-setup="{}">
+      <source src="http://movietrailers.apple.com/movies/independent/lovethecoopers/lovethecoopers-tlr1_h480p.mov" type='video/mp4' />
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+      </video>
+    </div>
+  </body>
+</html>
