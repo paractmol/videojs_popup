@@ -1,8 +1,9 @@
 <html>
 <head>
   <title>Video.js | HTML5 Video Player</title>
-  <link href="https://vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
-  <script src="https://vjs.zencdn.net/5.19/video.min.js"></script>
+
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <script src="video.js"></script>
 
   <link href="magnific-popup.css" rel="stylesheet" type="text/css">
 
@@ -10,6 +11,7 @@
   <script src="magnific-popup.js"></script>
 
   <script>
+    videojs.options.flash.swf = "video-js.swf";
     $('document').ready(function(){
       $('.open-popup-link').magnificPopup({
         type:'inline',
